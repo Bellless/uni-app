@@ -1,8 +1,10 @@
 <template>
 	<view class="container">
 		<view class="intro">
-			<lable><text>姓名:<input type="text" v-model="form.name" /></text></lable>
-			<lable><text>性别:<input type="text" v-model="form.sex" /></text></lable>
+			<view class="intro-a">
+				姓名:<input type="text" v-model="form.name" />
+				性别:<input type="text" v-model="form.sex" />
+			</view>
 			<button type="default" @click="fnSubmit">注册</button>
 		</view>
 		<view class="" v-for="(item,index) in list" :key="index">
@@ -11,6 +13,11 @@
 			<text @click="fnDelete(item._id)" class="del">删除</text>
 			<text @click="fnUpdata(item._id)" class="del">更新</text>
 		</view>
+		<navigator url="../one/one" open-type="navigate">
+			    <!-- selectable 文本是否可以复制 -->
+				<!-- <text selectable="false">跳转到Vue动态点击跳转案例</text> -->
+				<button type="default" open-type="feedback">跳转到另一个页面</button>
+		</navigator>
 	</view>
 </template>
 
@@ -91,6 +98,13 @@
 </script>
 
 <style>
+		
+	.intro-a{
+		width: 100%;
+		background-color: red;
+		display: flex;
+		justify-content: space-around;
+	}
 	.container {
 		padding: 20px;
 		font-size: 14px;

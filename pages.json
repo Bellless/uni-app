@@ -1,14 +1,119 @@
 {
-	"pages": [{
-		"path": "pages/index/index",
-		"style": {
-			"navigationBarTitleText": "uni-ui基础项目"
+	// 局部配置
+	"pages": [
+		// pages下第一项表示启动页
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"navigationBarBackgroundColor": "#baf5e0",
+				// 配置Html5（网页）的效果
+				"h5": {
+					// 刷新时候的颜色
+					"pullToRefresh": {
+						"color": "#7D26CD"
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/one/one",
+			"style": {
+				"navigationBarTitleText": "测试页面",
+				"h5": {
+					// 刷新时候的颜色
+					"pullToRefresh": {
+						"color": "#ffff00"
+					}
+				}
+			}
 		}
-	}],
+	    ,{
+            "path" : "pages/contact/contact",
+            "style" : {
+				"navigationBarTitleText": "联系我们",
+				"navigationBarBackgroundColor": "#1fa0f5",
+				"backgroundColor": "#41aa10"
+			}
+        }
+        ,{
+            "path" : "pages/information/information",
+            "style" : {
+				"navigationBarTitleText": "信息"
+			}
+        }
+    ],
+	// 全局配置文件（在局部配置文件里面一样可以使用）
 	"globalStyle": {
-		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#007AFF",
-		"backgroundColor": "#FFFFFF"
+		// 导航栏标题颜色及状态栏前景颜色，仅支持 black/white
+		"navigationBarTextStyle": "black",
+		// 导航栏标题文字内容  
+		"navigationBarTitleText": "个人项目",
+		// 导航栏背景颜色（同状态栏背景色） 
+		"navigationBarBackgroundColor": "#F56C6C",
+		// 下拉窗口背景颜色
+		"backgroundColor": "#F0AD4E",
+		 // 下拉 loading 的样式，仅支持 dark / light
+		"backgroundTextStyle":"light",
+		// 所有页面是否开启下拉刷新
+		"enablePullDownRefresh": true
+	},
+	// 配置底部导航栏
+	"tabBar":{
+		// 底部导航栏未选中时候的颜色文字颜色
+		"color":"#007AFF",
+		// 底部导航栏选中时候的文字颜色
+		"selectedColor":"#F0AD4E",
+		// 底部导航栏背景颜色
+		// "backgroundColor":"#4CD964",
+		// 底部导航栏上边框的颜色  black/white
+		"borderStyle":"black",
+		// 底部导航栏位置  默认是bottom(底部)/top(顶部**只在小程序中生效 当设置为top的时候图标将不在显示)
+		"position":"bottom",
+		"list":[
+			{
+				"text":"首页",
+				// 路径
+				"pagePath":"pages/index/index",
+				// 初始图标
+				"iconPath":"static/tabs/home.png",
+				// 选中时候的图标
+				"selectedIconPath":"static/tabs/home-active.png"
+				
+			},
+			{
+				"text":"联系",
+				// 路径
+				"pagePath":"pages/contact/contact",
+				// 初始图标
+				"iconPath":"static/tabs/contact.png",
+				// 选中时候的图标
+				"selectedIconPath":"static/tabs/contact-active.png"
+				
+			},
+			{
+				"text":"个人消息",
+				// 路径
+				"pagePath":"pages/information/information",
+				// 初始图标
+				"iconPath":"static/tabs/message.png",
+				// 选中时候的图标
+				"selectedIconPath":"static/tabs/message-active.png"
+			}
+		]
+	},
+	// 启动模式配置
+	"condition":{
+		// current >>对应list中的数组下标
+		"current":0,
+		// list >>可以配置多条启动配置
+		"list":[
+			{
+				"name":"startup",
+				"path":"pages/startup/startup",
+				// query >>启动参数  可在页面的onload函数中获取到
+				"query":"id=80"
+			}
+		]
 	}
 }

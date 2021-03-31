@@ -1,0 +1,22 @@
+
+.intro-a{
+	width: 100%;
+	background-color: red;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-around;
+	        justify-content: space-around;
+}
+.container {
+	padding: 20px;
+	font-size: 14px;
+	line-height: 24px;
+}
+.del {
+	margin-left: 50px;
+}
+.name {
+	margin-left: 10px;
+}
+
